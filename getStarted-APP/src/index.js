@@ -102,15 +102,15 @@ class Game extends React.Component {
     const who = this.state.XisNext ? 'X' : 'O';
     squares[i] = who
 
-    this.setState({
+    this.setState((state)=>({
       history: [...his, {
         squares: squares,
         player: who,
         position: [Math.ceil((i + 1) / 3), (i % 3) + 1]
       }],
-      XisNext: !this.state.XisNext,
+      XisNext: !state.XisNext,
       currentStep: len,
-    })
+    }))
     // this.hightLightCurrentStep(his.length)
   }
 
@@ -124,9 +124,9 @@ class Game extends React.Component {
   }
 
   sort(){
-    this.setState({
+    this.setState((state)=>({
       sort:!this.state.sort
-    })
+    }))
   }
 
   hightLightCurrentStep(i) {
