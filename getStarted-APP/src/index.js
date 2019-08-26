@@ -20,7 +20,7 @@ const Square = (props) => {
   return (
     <button
       className='square'
-      // 函数式组件可以这么写↓ 前后都没括号
+      // 函数式组件可以这么写↓ 前后都没括号 函数式里没this
       onClick={props.onClick}
     >
       {props.value}
