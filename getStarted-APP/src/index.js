@@ -30,35 +30,29 @@ const Square = (props) => {
 
 
 
-class Board extends React.Component {
-  renderSquare(i) {
-    return (
-      <Square
-        key={i}
-        value={this.props.squares[i]}
-        onClick={() => this.props.onClick(i)}
-      />
-    )
-  }
-
-
-  render() {
-    return (
-      <div>
-        {
-          Array(3).fill(null).map((itemx, x) => (
-            <div className="board-row" key={x}>
-              {
-                Array(3).fill(null).map((itemy, y) => (
-                  this.renderSquare(3 * x + y)
-                ))
-              }
-            </div>
-          ))
-        }
-      </div>
-    );
-  }
+const Board = (props) => {
+  return (
+    <div>
+      {
+        Array(3).fill(null).map((itemx, x) => (
+          <div className="board-row" key={x}>
+            {
+              Array(3).fill(null).map((itemy, y) => {
+                const i = 3 * x + y
+                return (
+                  <Square
+                    key={i}
+                    value={props.squares[i]}
+                    onClick={props.onClick.bind(this, i)}
+                  />
+                )
+              })
+            }
+          </div>
+        ))
+      }
+    </div>
+  );
 }
 
 class Game extends React.Component {
@@ -91,7 +85,7 @@ class Game extends React.Component {
     return status
   }
 
-  handleClick=(i)=> {
+  handleClick = (i) => {
     const his = this.state.history.slice(0, this.state.currentStep + 1)
     const len = his.length
     const current = his[len - 1]
@@ -102,7 +96,7 @@ class Game extends React.Component {
     const who = this.state.XisNext ? 'X' : 'O';
     squares[i] = who
 
-    this.setState((state)=>({
+    this.setState((state) => ({
       history: [...his, {
         squares: squares,
         player: who,
@@ -123,9 +117,9 @@ class Game extends React.Component {
     // this.hightLightCurrentStep(step)
   }
 
-  sort(){
-    this.setState((state)=>({
-      sort:!this.state.sort
+  sort() {
+    this.setState((state) => ({
+      sort: !this.state.sort
     }))
   }
 
@@ -155,24 +149,24 @@ class Game extends React.Component {
       [0, 4, 8],
       [2, 4, 6],
     ]
-    const lis=document.getElementsByClassName('square')
+    const lis = document.getElementsByClassName('square')
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i]
       if (squares[a] && squares[a] === squares[b] & squares[a] === squares[c]) {
         console.log(lis)
-        for(let idx of lines[i]){
+        for (let idx of lines[i]) {
           // console.log(idx)
-          lis[idx]['className']+=' highlight'
+          lis[idx]['className'] += ' highlight'
         }
         return squares[a]
       }
     }
-    for(let itm of lis){
-      itm['className']='square'
+    for (let itm of lis) {
+      itm['className'] = 'square'
     }
     return null
   }
-  
+
 
   componentDidUpdate() {
     this.hightLightCurrentStep(this.state.currentStep)
@@ -192,14 +186,14 @@ class Game extends React.Component {
       );
     })
 
-/**
- * Class里面的方法默认不绑定this
- * 
- * 一般来说JSX直接 ()=>this.somefunc() 就可以确保绑定this
- * 但是作为prop传入子组件时这些组件可能会重新渲染,
- * 可用 class fields语法 ↓ 来避免性能问题或者在constructor手动绑
- * 参照↓ this.handleClick
- */
+    /**
+     * Class里面的方法默认不绑定this
+     * 
+     * 一般来说JSX直接 ()=>this.somefunc() 就可以确保绑定this
+     * 但是作为prop传入子组件时这些组件可能会重新渲染,
+     * 可用 class fields语法 ↓ 来避免性能问题或者在constructor手动绑
+     * 参照↓ this.handleClick
+     */
     return (
       <div className="game">
         <div className="game-board">
@@ -211,7 +205,7 @@ class Game extends React.Component {
         <div className="game-info">
           <div>{this.gameStatus()}</div>
           <button
-            onClick={()=>{this.sort()}}
+            onClick={() => { this.sort() }}
           >
             {this.state.sort ? '　倒序　' : '　顺序　'}
           </button>
