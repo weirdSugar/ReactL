@@ -91,7 +91,7 @@ class Game extends React.Component {
     return status
   }
 
-  handleClick(i) {
+  handleClick=(i)=> {
     const his = this.state.history.slice(0, this.state.currentStep + 1)
     const len = his.length
     const current = his[len - 1]
@@ -192,12 +192,19 @@ class Game extends React.Component {
       );
     })
 
-
+/**
+ * Class里面的方法默认不绑定this
+ * 
+ * 一般来说JSX直接 ()=>this.somefunc() 就可以确保绑定this
+ * 但是作为prop传入子组件时这些组件可能会重新渲染,
+ * 可用 class fields语法 ↓ 来避免性能问题或者在constructor手动绑
+ * 参照↓ this.handleClick
+ */
     return (
       <div className="game">
         <div className="game-board">
           <Board
-            onClick={i => this.handleClick(i)}
+            onClick={this.handleClick}
             squares={current.squares}
           />
         </div>
