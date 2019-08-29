@@ -1,0 +1,14 @@
+@import './var.scss';
+
+
+@mixin bg-url($url) {
+  background-image: url($url)
+}
+@mixin bg-full($p:center,$r:no-repeat,$s:contain) {
+  background-position: $p;
+  background-repeat: $r;
+  background-size: $s;
+}
+@mixin bg-color {
+  background-color: $theme-color-default;
+}

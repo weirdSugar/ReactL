@@ -1,9 +1,9 @@
 const path=require('path');
 const DIST_PATH=path.resolve(__dirname,'../dist');
-const APP_PATH=path.resolve(__dirname,'../app')
+const APP_PATH=path.resolve(__dirname,'../src')
 module.exports={
   entry:{
-    app:'./app/index.js',
+    app:'./index.js',
   },
   output:{
     filename:'js/bundle.js',
@@ -14,8 +14,9 @@ module.exports={
     rules:[
       {
         test:/\.js?$/,
-        use:'babel-loader',
-        include:APP_PATH,
+        loader:'babel-loader',
+        // include:APP_PATH
+        exclude:/node_moudles/,
       },
       {
         test:/\.css$/,
@@ -51,12 +52,12 @@ module.exports={
       },
       {
         test:/\.(png|jpg|gif|woff|svg|eot|woff2|tff)$/,
-        use:'url-loader',
+        loader:'url-loader',
         exclude:/node_modules/,
         options:{
           publicPath:'/',
           name:'images/[name].[ext]',
-          limit:1024
+          limit:10000
         }
       }
     ]

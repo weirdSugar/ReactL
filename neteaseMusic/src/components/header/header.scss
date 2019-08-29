@@ -1,0 +1,29 @@
+// @import '../../assets/css/var.scss';
+@import '../../assets/css/mixin.scss';
+
+.header{
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 0.417rem .37rem;  
+  @include bg-color; 
+
+  .skin-shift,.brand,.search{
+    width: .648rem;
+    height: .648rem;
+    @include bg-full();
+    align-self: center;
+  }
+  .skin-shift{
+    @include bg-url('../../assets/img/menu/ov.png')
+  }
+  .brand{
+    @include bg-url('../../assets/img/menu/t_actionbar_discover_selected.png');
+    width: 4.63rem;
+  }
+  .search{
+    @include bg-url('../../assets/img/menu/pf.png')
+  }
+}
