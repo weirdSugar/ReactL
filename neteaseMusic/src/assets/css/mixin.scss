@@ -9,6 +9,22 @@
   background-repeat: $r;
   background-size: $s;
 }
-@mixin bg-color {
-  background-color: $theme-color-default;
+@mixin bg-color($color) {
+  background-color: $color;
+}
+
+
+
+@mixin flex{
+  display: flex;
+  display: -webkit-flex;
+  display:-ms-flexbox;
+}
+
+@mixin transition($type,$time){
+  transition: $type $time;
+  -moz-transition: $type $time;
+  -webkit-transition: $type $time;
+  -o-transition: $type $time;
+  -ms-transition: $type $time;
 }

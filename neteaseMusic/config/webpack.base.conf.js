@@ -9,7 +9,6 @@ module.exports={
     filename:'js/bundle.js',
     path:DIST_PATH,
   },
-
   module:{
     rules:[
       {
@@ -19,37 +18,21 @@ module.exports={
         exclude:/node_moudles/,
       },
       {
-        test:/\.css$/,
+        test:/\.(css|scss)$/,
         use:[
           { loader:'style-loader' },
           { loader:'css-loader' },
-          {
-            loader:'postcss-loader',
-          },
+          { loader:'sass-loader' },
         ]
       },
-      {
-        test:/\.less$/,
-        use:[
-          {  loader: "style-loader"  },
-          {  loader: "css-loader" },
-          {
-            loader:'postcss-loader',
-          },
-          { loader:'less-loader' }
-        ]
-      },
-      {
-        test:/\.scss$/,
-        use:[
-          {  loader: "style-loader"  },
-          {  loader: "css-loader" },
-          {
-            loader:'postcss-loader',
-          },
-          { loader:'sass-loader' }
-        ]
-      },
+      // {
+      //   test:/\.scss$/,
+      //   use:[
+      //     { loader:'style-loader' },
+      //     { loader:'css-loader' },
+      //     { loader:'sass-loader' },
+      //   ]
+      // },
       {
         test:/\.(png|jpg|gif|woff|svg|eot|woff2|tff)$/,
         loader:'url-loader',

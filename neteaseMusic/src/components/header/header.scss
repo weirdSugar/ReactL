@@ -11,13 +11,13 @@
   display: -ms-flexbox;
   box-sizing: border-box;
   justify-content: space-between;
-  padding: 0.417rem .37rem;  
-  @include bg-color; 
+  padding: 0.41rem .37rem;  
+  @include bg-color($theme-color); 
 
   .skin-shift,.brand,.search{
     width: .648rem;
     height: .648rem;
-    @include bg-full();
+    @include bg-full;
     align-self: center;
   }
   .skin-shift{

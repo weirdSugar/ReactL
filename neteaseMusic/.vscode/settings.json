@@ -1,0 +1,6 @@
+{
+  "emmet.triggerExpansionOnTab": true,
+  "files.autoSaveDelay": 0,
+  "eslint.autoFixOnSave": true,
+  "files.autoSave": "onFocusChange",
+}

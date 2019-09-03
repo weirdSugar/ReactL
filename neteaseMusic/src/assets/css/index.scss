@@ -2,12 +2,17 @@
 @import './reset.scss';
 
 :root{
-  --THEME-COLOR:var(--USER-THEME-COLOR,$theme-color-default)
+  --THEME:var(--USER-THEME-COLOR,#e5473c)
 }
 
 #root{
-  height: 100vh;
+  // height: 100vh;
+  position: relative;
   width: 100vw;
   box-sizing: border-box;
   padding-top: 1.48rem;
+}
+
+div,input,button,li{
+  text-align: center;
 }

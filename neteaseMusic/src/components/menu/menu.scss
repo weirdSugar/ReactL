@@ -1,0 +1,37 @@
+@import '../../assets/css/mixin.scss';
+.menu{
+  @include transition(all,.4s);
+}
+.menu-mask{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  @include bg-color(rgba(0,0,0,.3));
+}
+.menu-content{
+  position: fixed;
+  width:84%;
+  min-height: 100vh;
+  top:0;
+  bottom:0;
+  z-index: 2;
+  overflow-y: scroll;
+  @include bg-color(#fff);
+  font-size: .427rem;
+}
+.menu-content .menu-title{
+  height: 4.444rem;
+  @include bg-full;
+  @include bg-url('../../assets/img/menu/aip.png');
+  @include bg-color(var(--THEME));
+  opacity: .8;
+}
+.menu-content .menu-item .go{
+  width: .5555rem;
+  height: .9259rem;
+  @include bg-url('../../assets/img/aa7.png');
+  @include bg-full($s: 30px, $p: center right);
+}
