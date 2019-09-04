@@ -3,7 +3,10 @@ import './header.scss'
 const Header = props=>{
   return (
     <header className="header">
-      <div className="skin-shift"></div>
+      <div
+       className="menu-drawer"
+       onClick={props.openMenu.bind(this,true)}
+      ></div>
       <div className="brand"></div>
       <div className="search"></div>
     </header>

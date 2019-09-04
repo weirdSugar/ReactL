@@ -14,13 +14,13 @@
   padding: 0.41rem .37rem;  
   @include bg-color($theme-color); 
 
-  .skin-shift,.brand,.search{
+  .menu-drawer,.brand,.search{
     width: .648rem;
     height: .648rem;
     @include bg-full;
     align-self: center;
   }
-  .skin-shift{
+  .menu-drawer{
     @include bg-url('../../assets/img/menu/ov.png')
   }
   .brand{

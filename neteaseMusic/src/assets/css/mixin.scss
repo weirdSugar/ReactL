@@ -21,10 +21,10 @@
   display:-ms-flexbox;
 }
 
-@mixin transition($type,$time){
-  transition: $type $time;
-  -moz-transition: $type $time;
-  -webkit-transition: $type $time;
-  -o-transition: $type $time;
-  -ms-transition: $type $time;
+@mixin transition($type,$time,$func){
+  transition: $type $time $func;
+  -moz-transition: $type $time $func;
+  -webkit-transition: $type $time $func;
+  -o-transition: $type $time $func;
+  -ms-transition: $type $time $func;
 }
