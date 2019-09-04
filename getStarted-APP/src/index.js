@@ -45,6 +45,7 @@ const Board = (props) => {
                     value={props.squares[i]}
                     onClick={props.onClick.bind(this, i)}
                   />
+                  // 此处事件对象必须显式传递
                 )
               })
             }
@@ -188,10 +189,12 @@ class Game extends React.Component {
 
     /**
      * Class里面的方法默认不绑定this
-     * 
-     * 一般来说JSX直接 ()=>this.somefunc() 就可以确保绑定this
+     * 通常情况下，如果你没有在方法后面添加 ()，
+     * 例如 onClick={this.handleClick}，你应该为这个方法绑定 this。
+     * 一般来说直接 onClick={(e)=>this.somefunc(e)} 就可以确保绑定this
      * 但是作为prop传入子组件时这些组件可能会重新渲染,
-     * 可用 class fields语法 ↓ 来避免性能问题或者在constructor手动绑
+     * 可用 class fields语法 ↑↓ 来避免性能问题或者在constructor手动绑
+     * 上述语法想传递参数只能bind
      * 参照↓ this.handleClick
      */
     return (
