@@ -45,7 +45,6 @@ const Board = (props) => {
                     value={props.squares[i]}
                     onClick={props.onClick.bind(this, i)}
                   />
-                  // 此处事件对象必须显式传递
                 )
               })
             }
