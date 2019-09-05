@@ -14,6 +14,8 @@ class App extends React.Component{
     this.setState({
       isSideBar:state
     })
+    const body=document.getElementsByTagName('body')[0]
+    state?body.className='hidden':body.className=''
   }
 
   render(){
@@ -22,7 +24,7 @@ class App extends React.Component{
           <Header openMenu={this.toggleSideBar}/>
           <React.Fragment>
             {Array(120).fill(null).map((itm,idx)=>(
-              <div key={idx}>
+              <div className='zzz' key={idx}>
                 {idx}
               </div>
             ))}

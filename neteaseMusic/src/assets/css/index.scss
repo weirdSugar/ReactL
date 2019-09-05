@@ -6,14 +6,16 @@
 }
 
 #root{
-  // height: 100vh;
-  position: relative;
-  width: 100vw;
   box-sizing: border-box;
   padding-top: 1.48rem;
+}
+.hidden{
   overflow: hidden;
 }
-
 div,input,button,li{
   text-align: center;
+}
+.zzz{
+  z-index: 0;
+  text-align: right;
 }
