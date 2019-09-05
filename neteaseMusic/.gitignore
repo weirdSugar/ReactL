@@ -1,3 +1,8 @@
 /node_modules/
+<<<<<<< HEAD
 .gitignore
 package-lock.json
+=======
+package-lock.json
+.gitignore
+>>>>>>> 452bf2a7504f995d45c285d29f6e3dad755bf53d
