@@ -6,6 +6,6 @@ module.exports={
         browser:'>1%'
       }
     }),
-    require('px2rem')({remUnit:37.5})
+    // require('px2rem')({remUnit:37.5})
   ]
 }

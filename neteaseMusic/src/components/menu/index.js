@@ -5,37 +5,55 @@ import classNames from 'classnames'
 import './menu.scss'
 const Menu =(props)=>{
   const menu_itemlist=[
-    '皮肤中心',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '77',
-    '8',
-    '9',
-    '13',
-    '14',
-    '15',
-    '23',
-    '1111',
-    '2354',
-    '53',
-    '5222',
-    '84',
-    '21,',
-    '23'
+    {
+      name:'皮肤中心',
+      path:'/skin'
+    },
+    {
+      name:'1',
+    },
+    {
+      name:'52',
+    },
+    {
+      name:'3',
+    },
+    {
+      name:'2',
+    },
+    {
+      name:'8',
+    },
+    {
+      name:'11',
+    },
+    {
+      name:'4',
+    },
+    {
+      name:'35',
+    },
+    {
+      name:'73',
+    },
+    {
+      name:'81',
+    },
+    {
+      name:'134',
+    },
+    {
+      name:'6',
+    },
   ]
 
 
   return (
     <div
      className={classNames(
-       'menu',
-       {'menu-open':props.isOpen}
-      )
-    }
+        'menu',
+        {'menu-open':props.isOpen}
+      )}
      onClick={props.closeMenu.bind(this,false)}
     >
       <div className="menu-mask"></div>
@@ -44,7 +62,7 @@ const Menu =(props)=>{
         <div className="menu-item-wrapper">
           {
             menu_itemlist.map((itm,idx)=>(
-              <MenuItem key={idx} name={itm} />
+              <MenuItem key={idx} name={itm.name} path={itm.path} />
             ))
           }
         </div>

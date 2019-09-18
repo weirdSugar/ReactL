@@ -1,40 +1,22 @@
 import React from 'react'
-import Header from '../../components/header'
-import Menu from '../../components/menu'
-class App extends React.Component{
-  constructor(props){
-    super(props);
-    this.state={
-      isSideBar:false
-    }
-    this.toggleSideBar=this.toggleSideBar.bind(this)
-  }
-  
-  toggleSideBar(state){
-    this.setState({
-      isSideBar:state
-    })
-    const body=document.getElementsByTagName('body')[0]
-    state?body.className='hidden':body.className=''
-  }
+import {Route, Switch, BrowserRouter as Router} from "react-router-dom";
 
-  render(){
+import Home from '../home'
+import Skin from '../skin'
+import Error from '../error'
+import Menu from '../../components/menu'
+const App = props => {
     return (
-        <React.Fragment>
-          <Header openMenu={this.toggleSideBar}/>
-          <React.Fragment>
-            {Array(120).fill(null).map((itm,idx)=>(
-              <div className='zzz' key={idx}>
-                {idx}
-              </div>
-            ))}
-          </React.Fragment>
-          <Menu
-           closeMenu={this.toggleSideBar}
-           isOpen={this.state.isSideBar}
-          />
-        </React.Fragment>
+        <Router>
+            <React.Fragment>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/Skin" component={Skin}/>
+                    <Route component={Error}/>
+                </Switch>
+                <Menu/>
+            </React.Fragment>
+        </Router>
     )
-  }
 }
 export default App

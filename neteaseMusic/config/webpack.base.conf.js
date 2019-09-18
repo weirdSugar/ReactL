@@ -18,7 +18,7 @@ module.exports={
         exclude:/node_moudles/,
       },
       {
-        test:/\.(css|scss)$/,
+        test:/\.scss$/,
         use:[
           { loader:'style-loader' },
           { loader:'css-loader' },

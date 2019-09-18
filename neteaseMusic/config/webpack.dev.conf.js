@@ -7,25 +7,26 @@ module.exports=merge(baseWebpackConfig,{
   mode:'development',
   output:{
     filename:'js/[name].[hash:16].js',
+    // publicPath:'/'
   },
   plugins:[
     new HtmlWebpackPlugin({
       template:'public/index.html',
       inject:'body',
       minify:{
-        // html5:true
+        html5:true,
+        removeComments: true,
+        collapseWhitespace: false
       },
       
     }),
-    new webpack.HotModuleReplacementPlugin()
+    // new webpack.HotModuleReplacementPlugin()
   ],
   devServer:{
     port:'1122',
-    contentBase:path.join(__dirname,'../public'),
     compress:true,
-    // historyApiFallback:true,
-    hot:true,
-    https:false,
+    historyApiFallback:true,
+    hotOnly:true,
     open:true,
   }
 })

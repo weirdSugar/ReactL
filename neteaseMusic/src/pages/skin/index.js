@@ -1,9 +1,14 @@
 import React from 'react'
 import './skin.scss'
-const Skin =(props)=>{
-  return (
-    <div className='skin'>
+class Skin extends React.Component {
+  render() {
+    return (
+      <div className='skin'>
+          <h1>qwdeqfcqw</h1>
+      </div>
+    )
+  }
 
-    </div>
-  )
 }
+
+export default Skin
