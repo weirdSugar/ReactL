@@ -1,0 +1,24 @@
+@import '../../assets/css/mixin.scss';
+nav{
+  position: fixed;
+  top:0;
+  right: 0;
+  left: 0;
+  display: flex;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  padding: 0.41rem .37rem;  
+  color: #fff;
+  font-size: .4rem;
+  line-height: 1.5;
+  @include bg-color(var(--THEME));
+
+  .goback{
+    width: .648rem;
+    height: .648rem;
+    @include bg-url('../../assets/img/oq.png');
+  }
+  .title{
+    padding-left: .5rem;
+  }
+}

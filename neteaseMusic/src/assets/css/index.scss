@@ -2,10 +2,9 @@
 @import './reset.scss';
 
 :root{
-  --THEME:var(--USER-THEME-COLOR,#e5473c)
+  --THEME:#e5473c
 }
-
-#root{
+#root>div{
   box-sizing: border-box;
   padding-top: 1.48rem;
 }

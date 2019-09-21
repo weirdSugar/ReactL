@@ -1,20 +1,24 @@
-import { combineReducers } from "redux"
-import * as ActionType from '../actionType'
-const initialState={
+import {
+  combineReducers
+} from "redux"
+import ActionType from '../actionType'
+
+
+const initialState = {
   isSideBar: false
 }
 
-function toggleSidebar (isSideBar=initialState.isSideBar,action){
-  switch(action.type){
+function toggleSidebar(initIsSideBar = initialState.isSideBar, action) {
+  switch (action.type) {
     case ActionType.TOGGLE_SIDEBAR:
-      return !isSideBar
+      return action.isSideBar
     default:
-      return isSideBar
+      return initIsSideBar
   }
 }
 
-const reducer=combineReducers({
-  toggleSidebar
+const reducer = combineReducers({
+  isSideBar:toggleSidebar
 })
 
 export default reducer

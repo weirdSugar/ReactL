@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Provider from 'react-redux';
+import {Provider} from 'react-redux';
 import App from './src/pages/app';
 import "lib-flexible";
 import './src/assets/css/index.scss';
 import store from './src/store';
-import {Provider} from 'react-redux'
 
 if (module.hot) {
   module.hot.accept(() => {

@@ -12,7 +12,7 @@
   box-sizing: border-box;
   justify-content: space-between;
   padding: 0.41rem .37rem;  
-  @include bg-color($theme-color); 
+  @include bg-color(var(--THEME)); 
 
   .menu-drawer,.brand,.search{
     width: .648rem;

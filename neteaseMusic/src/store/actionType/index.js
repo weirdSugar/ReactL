@@ -1,6 +1,6 @@
 const TOGGLE_SIDEBAR='TOGGLE_SIDEBAR'
 
 
-export {
+export default {
   TOGGLE_SIDEBAR
 }
