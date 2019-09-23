@@ -8,14 +8,12 @@ import Menu from '../../components/menu'
 const App = props => {
     return (
         <Router>
-            <React.Fragment>
+                <Menu/>
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route path="/Skin" component={Skin}/>
                     <Route component={Error}/>
                 </Switch>
-                <Menu/>
-            </React.Fragment>
         </Router>
     )
 }

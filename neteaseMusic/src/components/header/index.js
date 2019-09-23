@@ -2,10 +2,14 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {actionToggleSidebar} from '../../store/actions'
 import './header.scss'
+import classNames from 'classnames'
 
 const Header = props =>{
   return(
-    <header className="header">
+    <header className={classNames(
+      'header',
+      {'layer-low':props.isSideBar}
+    )}>
       <div
         className="menu-drawer"
         onClick={props.openSidebar}
@@ -16,9 +20,9 @@ const Header = props =>{
   )
 }
 
-// const state2props = state =>({
-
-// })
+const state2props = state =>({
+  isSideBar:state.isSideBar
+})
 
 const dispatch2props = dispatch=>({
   openSidebar:()=>{
@@ -27,6 +31,6 @@ const dispatch2props = dispatch=>({
 })
 
 export default connect(
-  state => state,
+  state2props,
   dispatch2props
 )(Header)
