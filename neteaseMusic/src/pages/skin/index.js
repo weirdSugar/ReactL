@@ -39,7 +39,9 @@ const Skin = props => {
       value: '#faac62'
     }
   ]
-
+  const themeChange = value => {
+    document.documentElement.style.setProperty('--THEME-CONTROL',value)
+  }
   return (
     <div className='skin'>
       <Nav title={'皮肤中心'}></Nav>
@@ -47,10 +49,11 @@ const Skin = props => {
         {
           listOfSkins.map( skin => (
             <li
+              key={skin.key}
               style={{
                 backgroundColor:skin.value
               }}
-              key={skin.key}
+              onClick={themeChange.bind(this,skin.value)}
             >{skin.name}
             </li>
           ))

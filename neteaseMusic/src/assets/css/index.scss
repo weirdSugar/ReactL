@@ -2,7 +2,7 @@
 @import './reset.scss';
 
 :root{
-  --THEME:#e5473c
+  --THEME:var(--THEME-CONTROL,#e5473c)
 }
 #root>div:nth-child(2){
   box-sizing: border-box;
