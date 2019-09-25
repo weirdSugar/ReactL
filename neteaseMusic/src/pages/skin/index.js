@@ -43,6 +43,19 @@ const Skin = props => {
   return (
     <div className='skin'>
       <Nav title={'皮肤中心'}></Nav>
+      <ul>
+        {
+          listOfSkins.map( skin => (
+            <li
+              style={{
+                backgroundColor:skin.value
+              }}
+              key={skin.key}
+            >{skin.name}
+            </li>
+          ))
+        }
+      </ul>
     </div>
   )
 }

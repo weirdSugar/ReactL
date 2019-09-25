@@ -1,5 +1,21 @@
+@import '../../assets/css/mixin.scss';
+
 .skin{
-  height: 100vh;
   width: 100vw;
   background:#f3f4f6;
+  padding: 0 50px; 
+  ul{
+    @include flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top: 80px;
+  }
+  li{
+    width: 43vw;
+    height: 43vw;
+    line-height: 43vw;
+    margin-bottom: 80px;
+    color: #fafafa;
+    font-size: .46rem;
+  }
 }

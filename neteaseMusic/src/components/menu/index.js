@@ -47,15 +47,21 @@ const menu_itemlist=[
   },
 ]
 const Menu = props =>{
+  
   return (
     <div
      className={classNames(
         'menu',
-        {'menu-open':props.isSideBar}
+        {'menu-open':props.isSideBar},
+        {'menu-close':!props.isSideBar}
       )}
       onClick={props.closeSideBar}
     >
-      <div className="menu-mask"></div>
+      <div className={classNames(
+          "menu-mask",
+        )
+      }
+      ></div>
       <div className="menu-content">
       <div className="menu-title"></div>
       <div className="menu-item-wrapper">

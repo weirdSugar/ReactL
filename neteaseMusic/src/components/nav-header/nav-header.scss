@@ -17,6 +17,7 @@ nav{
     width: .648rem;
     height: .648rem;
     @include bg-url('../../assets/img/oq.png');
+    @include bg-full
   }
   .title{
     padding-left: .5rem;

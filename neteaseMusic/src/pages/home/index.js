@@ -6,7 +6,13 @@ const Home = props =>{
         <div className='home'>
           <Header/>
           {Array(120).fill(null).map((itm,idx)=>(
-            <div className='zzz' key={idx}>
+            <div
+              onClick={
+                function (){
+                  alert('qweqwr')
+                }
+              }
+             className='zzz' key={idx}>
               {idx}
             </div>
           ))}

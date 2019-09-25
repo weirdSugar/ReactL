@@ -19,6 +19,7 @@
   display: flex;
   display: -webkit-flex;
   display:-ms-flexbox;
+  flex-wrap: wrap;
 }
 
 @mixin transition($type,$time,$func){
