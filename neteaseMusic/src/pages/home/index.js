@@ -1,12 +1,14 @@
 import React from "react";
 // import { Component } from "react";
 import Header from "../../components/header";
+import Banner from "../../components/banner";
 import "./home.scss";
 
 const Home = props => {
   return (
     <div className="home">
       <Header />
+      <Banner />
       {Array(120)
         .fill(null)
         .map((itm, idx) => (
