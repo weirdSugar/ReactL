@@ -19,9 +19,8 @@ class Banner extends Component {
     });
   }
   render() {
-    console.log(this.state.listOfBanner);
-    return this.state.listOfBanner.map(itm => {
-      return <img src={itm.imageUrl} key={itm.targetId} />;
+    return this.state.listOfBanner.map((itm, idx) => {
+      return <img src={itm.imageUrl} key={itm.targetId + idx} />;
     });
   }
 }
