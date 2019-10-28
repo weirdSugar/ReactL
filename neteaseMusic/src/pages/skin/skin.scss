@@ -1,21 +1,21 @@
-@import '../../assets/css/mixin.scss';
+@import "../../assets/css/mixin.scss";
 
-.skin{
+.skin {
   width: 100vw;
-  background:#f3f4f6;
-  padding: 0 50px; 
-  ul{
+  background: #f3f4f6;
+  padding: 0 0.4rem;
+  ul {
     @include flex;
     justify-content: space-between;
     box-sizing: border-box;
-    padding-top: 80px;
+    padding-top: 0.8rem;
   }
-  li{
+  li {
     width: 43vw;
     height: 43vw;
     line-height: 43vw;
-    margin-bottom: 80px;
+    margin-bottom: 0.8rem;
     color: #fafafa;
-    font-size: .46rem;
+    font-size: 0.46rem;
   }
 }
