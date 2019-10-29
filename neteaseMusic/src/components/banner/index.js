@@ -2,7 +2,6 @@ import React from "react";
 import { Component } from "react";
 import { getBanner } from "../../api";
 import "./banner.scss";
-var time = null;
 class Banner extends Component {
   constructor(props) {
     super(props);
@@ -10,10 +9,7 @@ class Banner extends Component {
       listOfBanner: [],
       nowIndex: 0
     };
-    // this.time = null;
   }
-
-  // static time = null;
 
   componentDidMount() {
     getBanner().then(data => {
@@ -22,15 +18,17 @@ class Banner extends Component {
       }));
     });
 
-    time = setInterval(() => {
-      this.setState(state => ({
-        nowIndex: state.nowIndex + 1 > 7 ? 0 : state.nowIndex + 1
-      }));
+    this.timer = setInterval(() => {
+      let {nowIndex}=this.state
+      nowIndex= nowIndex + 1 > 7 ? 0 : nowIndex + 1
+      this.setState({
+        nowIndex:nowIndex
+      });
     }, 3000);
   }
-  // componentWillUnmount() {
-  //   time = null;
-  // }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
 
   render() {
     const { nowIndex, listOfBanner: bannerList } = this.state;
