@@ -68,6 +68,9 @@ class Game extends React.Component {
       currentStep: 0,
       sort: true
     };
+
+    // this.handleClick = this.handleClick.bind(this);
+    // 或者显示的绑定
   }
 
   gameStatus() {
@@ -195,7 +198,7 @@ class Game extends React.Component {
      * 一般来说直接 onClick={(e)=>this.somefunc(e)} 就可以确保绑定this
      * 但是作为prop传入子组件时这些组件可能会重新渲染,
      * 可用 class fields语法 ↑↓ 来避免性能问题或者在constructor手动绑
-     * 上述语法想传递参数只能bind
+     * 上述语法想传递参数只能bind,事件对象event以及更多的参数将会被隐式的进行传递。
      * 参照↓ this.handleClick
      */
     return (
