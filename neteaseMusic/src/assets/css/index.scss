@@ -1,22 +1,28 @@
-@import './var.scss';
-@import './reset.scss';
+@import "./var.scss";
+@import "./reset.scss";
 
-:root{
-  --THEME:var(--THEME-CONTROL,#e5473c)
+:root {
+  --THEME: var(--THEME-CONTROL, #e5473c);
 }
-#root>div:nth-child(2){
+#root > div:nth-child(2) {
   box-sizing: border-box;
   padding-top: 1.48rem;
 }
-.hidden{
+* {
+  box-sizing: border-box;
+}
+.hidden {
   overflow: hidden;
 }
-div,input,button,li{
+div,
+input,
+button,
+li {
   text-align: center;
 }
-.zzz{
+.zzz {
   text-align: right;
 }
-.layer-low{
+.layer-low {
   z-index: -1;
 }

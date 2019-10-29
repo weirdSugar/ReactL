@@ -2,7 +2,7 @@ import React from "react";
 import { Component } from "react";
 import { getBanner } from "../../api";
 import "./banner.scss";
-
+var time = null;
 class Banner extends Component {
   constructor(props) {
     super(props);
@@ -10,18 +10,10 @@ class Banner extends Component {
       listOfBanner: [],
       nowIndex: 0
     };
+    // this.time = null;
   }
 
-  // setBannerBox() {
-  //   let bannerbox = [];
-  //   const nowIndex = this.state.nowIndex;
-  //   const bannerList = [...this.state.listOfBanner];
-  //   const before = nowIndex - 1 < 0 ? 7 : nowIndex - 1;
-  //   const after = nowIndex + 1 > 7 ? 0 : nowIndex + 1;
-  //   bannerbox = [bannerList[before], bannerList[nowIndex], bannerList[after]];
-
-  //   return bannerbox;
-  // }
+  // static time = null;
 
   componentDidMount() {
     getBanner().then(data => {
@@ -29,22 +21,25 @@ class Banner extends Component {
         listOfBanner: [...data.banners]
       }));
     });
-  }
 
-  render() {
-    const { nowIndex, listOfBanner: bannerList } = this.state;
-    let time = setTimeout(() => {
+    time = setInterval(() => {
       this.setState(state => ({
         nowIndex: state.nowIndex + 1 > 7 ? 0 : state.nowIndex + 1
       }));
-      time = null;
     }, 3000);
+  }
+  // componentWillUnmount() {
+  //   time = null;
+  // }
+
+  render() {
+    const { nowIndex, listOfBanner: bannerList } = this.state;
     if (bannerList.length > 0) {
       return (
         <div
           className="banner"
           style={{
-            transform: `translateX(-${10.8 * nowIndex}rem)`
+            transform: `translateX(-${100 * nowIndex}vw)`
           }}
         >
           {bannerList.map((itm, idx) => (

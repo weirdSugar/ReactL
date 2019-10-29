@@ -1,11 +1,12 @@
 .banner {
   display: flex;
   flex-direction: row;
-  width: 88rem;
+  width: 800vw;
   height: 4rem;
   transition: all 0.76s;
   .bannerbox {
-    width: 10.8rem;
+    padding: 0.2rem 2.7vw;
+    width: 100vw;
     margin-right: 0 0.1rem;
     img {
       width: 100%;

@@ -1,9 +1,9 @@
 // @import '../../assets/css/var.scss';
-@import '../../assets/css/mixin.scss';
+@import "../../assets/css/mixin.scss";
 
-.header{
+.header {
   position: fixed;
-  top:0;
+  top: 0;
   right: 0;
   left: 0;
   display: flex;
@@ -11,23 +11,26 @@
   display: -ms-flexbox;
   box-sizing: border-box;
   justify-content: space-between;
-  padding: 0.41rem .37rem;  
-  @include bg-color(var(--THEME)); 
+  padding: 0.41rem 0.37rem;
+  @include bg-color(var(--THEME));
+  z-index: 1;
 
-  .menu-drawer,.brand,.search{
-    width: .648rem;
-    height: .648rem;
+  .menu-drawer,
+  .brand,
+  .search {
+    width: 0.648rem;
+    height: 0.648rem;
     @include bg-full;
     align-self: center;
   }
-  .menu-drawer{
-    @include bg-url('../../assets/img/menu/ov.png')
+  .menu-drawer {
+    @include bg-url("../../assets/img/menu/ov.png");
   }
-  .brand{
-    @include bg-url('../../assets/img/menu/t_actionbar_discover_selected.png');
+  .brand {
+    @include bg-url("../../assets/img/menu/t_actionbar_discover_selected.png");
     width: 4.63rem;
   }
-  .search{
-    @include bg-url('../../assets/img/menu/pf.png')
+  .search {
+    @include bg-url("../../assets/img/menu/pf.png");
   }
 }
